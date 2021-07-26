@@ -41,7 +41,8 @@ def is_send_email(device_id, key, is_email, msg):
     if is_email:
         # 发送错误信息到服务器，用于邮件提醒
         result = HttpFunction(config_all).send_message_for_email(device_id, key, msg)
-        log.debug_logger.logger.info(key+" sync email result:" + str(result["data"]))
+        if result is not None:
+            log.debug_logger.logger.info(key+" sync email result:" +str(result["data"]))
 
 
 def farmer_status(device_id, key, executable_full_path, farmer_reboot, farmer_email):

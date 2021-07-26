@@ -72,7 +72,7 @@ def device_message_manager(device_id, key, crypto_item_conf, config):
 
     # 通过device_id查找数据，是否存在绑定的数据
     result_data = HttpFunction(config).had_bind_user(device_id)
-    if 200 == result_data["code"]:
+    if result_data is not None and 200 == result_data["code"]:
         # 如果存在绑定的用户数据，把当前机器上的数据通过api同步到该用户下
         information_all = ObjDict()
         information_all.type = key

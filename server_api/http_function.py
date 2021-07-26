@@ -21,7 +21,7 @@ class HttpFunction:
             content_json = json.loads(content)
             return content_json
         except Exception as e:
-            log.err_logger.logger.error("网络错误")
+            log.err_logger.logger.error("Cannot connect to the Server,Please check the internet and monitor server!")
 
 
     # 同步chia数据到server
@@ -40,7 +40,7 @@ class HttpFunction:
             else:
                 log.err_logger.logger.error("sync information error:" + str(information_all))
         except Exception as e:
-            log.err_logger.logger.error("网络错误" + str(e) + str(information_all))
+            log.err_logger.logger.error("Cannot connect to the Server,Please check the internet and monitor server!" + str(e) + str(information_all))
 
     def get_node_properties(self, device_id):
         self_url = "/chia/open/api/getNodePropertiesByDeviceId/" + str(device_id)
@@ -51,7 +51,7 @@ class HttpFunction:
             return content_json['data']
 
         except Exception as e:
-            log.err_logger.logger.error("网络错误")
+            log.err_logger.logger.error("Cannot connect to the Server,Please check the internet and monitor server!")
             return None
 
     def send_message_for_email(self, device_id, type, msg):
@@ -70,4 +70,4 @@ class HttpFunction:
             content_json = json.loads(content)
             return content_json
         except Exception as e:
-            log.err_logger.logger.error("网络错误" + str(e) + str(data))
+            log.err_logger.logger.error("Cannot connect to the Server,Please check the internet and monitor server!" + str(e) + str(data))

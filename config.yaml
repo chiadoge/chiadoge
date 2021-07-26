@@ -1,7 +1,7 @@
 # This file is very important config.yaml
 monitor:
-#  server: 'http://39.99.176.125:28082'
-  server: 'http://localhost:28082'
+  server: 'http://39.99.176.125:28082'
+#  server: 'http://localhost:28082'
 
 
 # You can also add more than one chia crypto by yourself
