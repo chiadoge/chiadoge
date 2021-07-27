@@ -48,6 +48,7 @@ def is_send_email(device_id, key, is_email, msg):
 def farmer_status(device_id, key, executable_full_path, farmer_reboot, farmer_email):
     log.debug_logger.logger.info("start check farmer status: "+key)
 
+
     # 判断farmer是否在正常工作
     # 1、节点是不是在同步，如果已经完成同步，判断是否在farming
     # 2、如果正在同步，不作任何处理
@@ -100,6 +101,7 @@ def farmer_status(device_id, key, executable_full_path, farmer_reboot, farmer_em
 def harvester_status(device_id, key, crypto_item_conf, executable_full_path, harvester_reboot, harvester_email):
     log.debug_logger.logger.info("start check harvester status: "+key)
 
+
     # 判断harvester是否在正常工作
     # debug.log日志路径
     result_data = harvester_parser.harvester_parser(device_id, crypto_item_conf, key, executable_full_path, harvester_reboot, harvester_email)
@@ -113,7 +115,6 @@ def harvester_status(device_id, key, crypto_item_conf, executable_full_path, har
 
 
 def node_status_manager(device_id, key, crypto_item_conf, config):
-
     # 判断farmer和harvester是否需要处理
     farmer_reboot = crypto_item_conf.get("farmer_restart", False)
     farmer_email = crypto_item_conf.get("farmer_send_email", False)
@@ -137,13 +138,6 @@ def node_status_manager(device_id, key, crypto_item_conf, config):
     for t in threads:
         # 启动线程
         t.start()
-
-    # sing_process = multiprocessing.Process(target=farmer_status,  name=key+"-farmer", args=(device_id, key, executable_full_path, farmer_reboot, farmer_email,))
-    # dance_process = multiprocessing.Process(target=harvester_status, name=key + "-harvester", args=(device_id, key, crypto_item_conf, executable_full_path, harvester_reboot, harvester_email,))  # target
-
-    # # 3. 启动进程
-    # sing_process.start()
-    # dance_process.start()
 
     # # farmer status monitor
     # farmer_status(device_id, key, executable_full_path, farmer_reboot, farmer_email)

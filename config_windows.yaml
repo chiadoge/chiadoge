@@ -11,8 +11,8 @@ crypto:
     executable_path: 'C:\Users\xjhouc\AppData\Local\chia-blockchain\app-1.1.7\resources\app.asar.unpacked\daemon\' #crypto installed path
     executable_name: 'chia.exe'
     debug_log_path: 'C:\Users\xjhouc\.chia\mainnet\log\debug.log' # log file path, you need open enabled Chia INFO level log
-    frequency_sync: 30 #default 300 seconds(5minutes),sync information to monitor server.Note that this period defines how often high priority notifications，will be re-triggered so < 5 min is not recommended
-    frequency_check_status: 30 #default 300 seconds(5minutes),check device status,such as farmer status or harvester status.Note < 5 min is not recommended
+    frequency_sync: 300 #default 300 seconds(5minutes),sync information to monitor server.Note that this period defines how often high priority notifications，will be re-triggered so < 5 min is not recommended
+    frequency_check_status: 300 #default 300 seconds(5minutes),check device status,such as farmer status or harvester status.Note < 5 min is not recommended
     farmer_restart: true #default false if true,means when farmer run err or offline,auto restart farmer
     farmer_send_email: true #default false
     harvester_restart: true #default false
@@ -23,8 +23,8 @@ crypto:
     executable_path: 'C:\Users\xjhouc\AppData\Local\flax-blockchain\app-0.1.0\resources\app.asar.unpacked\daemon\'
     executable_name: 'flax.exe'
     debug_log_path: 'C:\Users\xjhouc\.chia\mainnet\log\debug.log' # log file path, you need open enabled Flax INFO level log
-    frequency_sync: 60 #default 300 seconds(5minutes),sync information to monitor server
-    frequency_check_status: 60 #default 300 seconds(5minutes),check device status,such as farmer status or harvester status
+    frequency_sync: 600 #default 300 seconds(5minutes),sync information to monitor server
+    frequency_check_status: 600 #default 300 seconds(5minutes),check device status,such as farmer status or harvester status
     farmer_restart: true #default false if true,means when farmer run err or offline,auto restart farmer
     farmer_send_email: true #default false
     harvester_restart: true #default false

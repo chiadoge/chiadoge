@@ -43,9 +43,6 @@ def get_chia_information(key, executable_full_path, crypto_item_conf):
             farm_message_item.value = farm_message_item_array[1]
             information_array.append(farm_message_item)
 
-    # cmd_get_wallet_address = cmd_cd_chia_dir + '''chia.exe wallet get_address'''
-    # get_wallet_address = exec_cmd(cmd_get_wallet_address)
-
     # 获取Crypto安装版本
     cmd_get_chia_version = executable_full_path + ''' version'''
     get_chia_version = exec_cmd(cmd_get_chia_version)
