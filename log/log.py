@@ -17,9 +17,12 @@ def mkdir(filename):
     # 存在     True
     # 不存在   False
     isExists = os.path.exists(path)
-    if not isExists:
-        os.makedirs(path)
 
+    if not isExists:
+        if log_config.is_win_platform():
+            os.makedirs(path)
+        else:
+            print("No such file path: "+ path)
 
 # 日志输出
 class Logger(object):

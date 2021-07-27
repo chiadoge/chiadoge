@@ -88,7 +88,7 @@ def device_message_manager(device_id, key, crypto_item_conf, config):
 
 
 # if __name__ == '__main__':
-#     conf = Config(Path("\\chiadoge\\config.yaml"))
+#     conf = Config(Path("/home/root/PycharmProjects/chiadoge/config_linux.yaml"))
 #     crypto_conf = conf.get_crypto_config()
 #     key = "chia"
 #     crypto_item_conf = crypto_conf.get(key)

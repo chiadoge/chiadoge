@@ -7,6 +7,7 @@ from datetime import datetime
 
 from log import log
 
+
 def harvester_info_match(debug_log_path):
     try:
         file_content = open(debug_log_path, 'r')

@@ -63,7 +63,7 @@ class HttpFunction:
             data = ObjDict()
             data.deviceId = device_id
             data.type = type
-            data.msg = "Device ID: " + device_id + " " + msg
+            data.msg = "Device ID: " + device_id + "<br/>" + msg
 
             request_result = requests.post(self._monitor_server + self_url, headers=head, data=json.dumps(data))
             content = request_result.content
