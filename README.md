@@ -1,7 +1,17 @@
+#ChiaDoge
+ChiaDoge is a chia tools.It can manage your chia device.It supports a web dashboard that allows you to monitor your Chia farm and send notifications when something error in your Chia device. It can link multiple farmers/harvesters to your account.we support Chia/Flax/Chaingreen/Goji and so on.It means any kind of chia is ok
+
+You can register and login the [web server](http://39.99.176.125:28080) with your Browser（recommend Chrome）：[http://39.99.176.125:28080](http://39.99.176.125:28080/)
+
+![web_server](./sources/images/markdown/web_server.png)
+
+![detail](./sources/images/markdown/detail.png)
+
+
 
 # Pre-requisites
 
-- Windows / Windows + WSL(Ubuntu)
+- Windows + Ubuntu
 - [Python 3.7+](https://www.python.org/downloads/windows/)
 - [Git](https://git-scm.com/downloads)
 - Enabled `INFO` logs on your chia farmer
@@ -19,17 +29,23 @@ under `C:\Users\[YOUR-USER]\.chia\mainnet\log\debug.log`.
 
 
 ## Run `Chiadoge.exe`
-> Download [chiadoge.zip](https://github.com/chiadoge/chiadoge/releases) from Github
-> 
-> Open zip,you will find `chiadoge.exe` and `config.yaml`
-> 
-> Extracted the zip to a directory and enter to it 
-> 
-> Run with: `chiadoge.exe --config config.yaml`
+1. Download [chiadoge.zip](https://github.com/chiadoge/chiadoge/releases) from Github
+2. Open zip,you will find `chiadoge.exe` and `config.yaml`
 
-<img src="/sources/images/markdown/zip.png" >
+![zip](./sources/images/markdown/zip.png)
 
-<img src="/sources/images/markdown/windows_run.png" >
+3. Extracted the zip to a directory and enter to it
+4. Run with: `chiadoge.exe --config config.yaml`
+5. Then you will get a `Device ID`
+
+![zip](./sources/images/markdown/windows_run.png)
+
+6. [Register](http://39.99.176.125:28080) web monitor with email
+7. Add node by `Device ID`
+
+![add_node](./sources/images/markdown/add_node.png)
+
+
 
 
 
@@ -63,4 +79,9 @@ chmod 777 install.sh
 chmod 777 start.sh
 ./start.sh
 ```
+5. Get `Device ID` 
+   
 
+6. [Register](http://39.99.176.125:28080) web monitor with email and  add node by `Device ID`
+
+![add_node](./sources/images/markdown/add_node.png)
