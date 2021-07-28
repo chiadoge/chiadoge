@@ -79,7 +79,7 @@ chmod 777 install.sh
 chmod 777 start.sh
 ./start.sh
 ```
-5. You get a `Device ID` 
+5. You will get a `Device ID` 
 
 ![linux_device_id](./sources/images/markdown/linux_device_id.png)
 
