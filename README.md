@@ -1,4 +1,4 @@
-#ChiaDoge
+# ChiaDoge
 ChiaDoge is a chia tools.It can manage your chia device.It supports a web dashboard that allows you to monitor your Chia farm and send notifications when something error in your Chia device. It can link multiple farmers/harvesters to your account.we support Chia/Flax/Chaingreen/Goji and so on.It means any kind of chia is ok
 
 You can register and login the [web server](http://39.99.176.125:28080) with your Browser（recommend Chrome）：[http://39.99.176.125:28080](http://39.99.176.125:28080/)
