@@ -7,6 +7,10 @@ fi
 
 # Activate the virtual environment
 . ./venv/bin/activate
+echo Your log path "$chiadoge_log_path"
 
 # Start the ChiaDoge
 python3 main.py --config config_linux.yaml
+
+# Start the ChiaDoge in background
+#nohup python3 main.py --config config_linux.yaml > /dev/null 2>&1 &
