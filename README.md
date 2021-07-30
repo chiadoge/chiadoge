@@ -86,3 +86,24 @@ chmod 777 start.sh
 6. [Register](http://39.99.176.125:28080) web monitor with email and  add node by `Device ID`
 
 ![add_node](./sources/images/markdown/add_node.png)
+
+
+# Where is my Chia?
+## Windows
+```
+chia exec file Default path is: C:\Users\<USERNAME>\AppData\Local\chia-blockchain\<VERSION>\resources\app.asar.unpacked\daemon\
+debug.log Default path is: C:\Users\<USERNAME>\.chia\mainnet\log\debug.log
+```
+
+## Ubuntu
+### Install Chia with deb file
+```
+chia exec file Default path is: /usr/lib/chia-blockchain/resources/app.asar.unpacked/daemon/
+debug.log Default path is: /home/<USER>/.chia/mainnet/log/debug.log
+```
+
+### Run Chia with source code (It means you run chia in python venv by yourself)
+```
+chia exec file Default path is: <ProjectPath>/venv/bin/
+debug.log Default path is: /home/<USER>/.chia/mainnet/log/debug.log
+```
