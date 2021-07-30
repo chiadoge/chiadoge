@@ -40,9 +40,10 @@ def is_restart(reboot, executable_full_path, name):
 def is_send_email(device_id, key, is_email, msg):
     if is_email:
         # 发送错误信息到服务器，用于邮件提醒
-        result = HttpFunction(config_all).send_message_for_email(device_id, key, msg)
-        if result is not None:
-            log.debug_logger.logger.info(key+" sync email result:" +str(result["data"]))
+        if msg is not None:
+            result = HttpFunction(config_all).send_message_for_email(device_id, key, msg)
+            if result is not None:
+                log.debug_logger.logger.info(key+" sync email result:" +str(result["data"]))
 
 
 def farmer_status(device_id, key, executable_full_path, farmer_reboot, farmer_email):
@@ -89,12 +90,16 @@ def farmer_status(device_id, key, executable_full_path, farmer_reboot, farmer_em
 
     elif "Farming status: Not synced or not connected to peers" in get_farm:
         msg = "节点未同步，请先同步节点！"
-        msg += is_restart(farmer_reboot, executable_full_path, cmd_name)
+        resutl_msg = is_restart(farmer_reboot, executable_full_path, cmd_name)
+        if resutl_msg is not None:
+            msg += resutl_msg
         is_send_email(device_id, key, farmer_email, msg)
 
     elif "Farming status: Not available" in get_farm:
         msg = "节点未同步，请先同步节点！"
-        msg += is_restart(farmer_reboot, executable_full_path, cmd_name)
+        resutl_msg = is_restart(farmer_reboot, executable_full_path, cmd_name)
+        if resutl_msg is not None:
+            msg += resutl_msg
         is_send_email(device_id, key, farmer_email, msg)
 
 
@@ -110,6 +115,7 @@ def harvester_status(device_id, key, crypto_item_conf, executable_full_path, har
         cmd_name = "restart_harvester"
         restart_msg = is_restart(harvester_reboot, executable_full_path, cmd_name)
 
+    if restart_msg is not None:
         msg = result_data.get("msg")
         is_send_email(device_id, key, harvester_email, msg + " " + restart_msg)
 
