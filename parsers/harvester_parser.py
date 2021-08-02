@@ -13,8 +13,8 @@ def harvester_parser(device_id, crypto_item_conf, key, executable_full_path, har
     start_match_time = datetime.now()
 
     # 开始遍历日志
-    debug_log_path = crypto_item_conf.get("debug_log_path", "")
-    last_matched_groups = match_logfile.harvester_info_match(debug_log_path)
+    debug_log_file = crypto_item_conf.get("debug_log_file", "")
+    last_matched_groups = match_logfile.harvester_info_match(debug_log_file)
 
     # 遍历结束时间
     end_match_time = datetime.now()
@@ -56,4 +56,4 @@ def harvester_parser(device_id, crypto_item_conf, key, executable_full_path, har
 
 
 # if __name__ == '__main__':
-#     harvester_parser(debug_log_path="\\.chia\\mainnet\\log\\debug.log")
+#     harvester_parser(debug_log_file="\\.chia\\mainnet\\log\\debug.log")
